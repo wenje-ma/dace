@@ -20,11 +20,7 @@ Let $\boldsymbol\Sigma_{22}$ be the covariance matrix of $\boldsymbol Y_2$, and 
 Let $\boldsymbol Y_2=\boldsymbol y_2$, the condictional distribution of $\boldsymbol Y_1$ is still a multivariate normal distribution:
 
 $$
-\begin{aligned}
-\boldsymbol Y_1\mid\boldsymbol Y_2&=\boldsymbol y_2\sim\mathcal N\left(\boldsymbol\mu_{1\mid2},\boldsymbol\Sigma_{1\mid2}\right),\text{ where}\\
-\boldsymbol\mu_{1\mid2}&=\boldsymbol\mu_1+\boldsymbol\Sigma_{12}\boldsymbol\Sigma_{22}^{-1}\left(\boldsymbol y_2-\boldsymbol\mu_2\right),\\
-\boldsymbol\Sigma_{1\mid2}&=\boldsymbol\Sigma_{11}-\boldsymbol\Sigma_{12}\boldsymbol\Sigma_{22}^{-1}\boldsymbol\Sigma_{21}.
-\end{aligned}
+\boldsymbol Y_1\mid\boldsymbol Y_2=\boldsymbol y_2\sim\mathcal N\left(\boldsymbol\mu_{1\mid2},\boldsymbol\Sigma_{1\mid2}\right),\text{ where};\boldsymbol\mu_{1\mid2}=\boldsymbol\mu_1+\boldsymbol\Sigma_{12}\boldsymbol\Sigma_{22}^{-1}\left(\boldsymbol y_2-\boldsymbol\mu_2\right),;\boldsymbol\Sigma_{1\mid2}=\boldsymbol\Sigma_{11}-\boldsymbol\Sigma_{12}\boldsymbol\Sigma_{22}^{-1}\boldsymbol\Sigma_{21}.
 $$
 
 Hence, if we have known the distuibution of $\boldsymbol Y_1$, we can easily compute the distribution of $\boldsymbol Y_2$. So as $Y\left(\boldsymbol x_i\right)$ and $Y\left(\boldsymbol x_j\right)$.
@@ -53,7 +49,7 @@ $$
 
 In the case above, $\alpha R_1\left(\boldsymbol0\right)+\left(1-\alpha\right)R_2\left(\boldsymbol0\right)=1$, which is still a valid correlation function.
 
-> Calculation gives $$\begin{aligned}R\left(h\mid\xi\right)&=\int_{-\infty}^{+\infty}\cos\left(hw\right)\frac1{\sqrt{2\pi}\sqrt{2\xi}}\exp\left\{-w^2/\left(4\xi\right)\right\}\mathrm dw\\&=\exp{-\xi h^2},\ h\in\mathbb R,\end{aligned}\tag{2.2.7}$$ which has rate parameter $\xi$.
+> Calculation gives $$R\left(h\mid\xi\right)=\int_{-\infty}^{+\infty}\cos\left(hw\right)\frac1{\sqrt{2\pi}\sqrt{2\xi}}\exp\left\{-w^2/\left(4\xi\right)\right\}\mathrm dw=\exp{-\xi h^2},\ h\in\mathbb R,\tag{2.2.7}$$ which has rate parameter $\xi$.
 
 > These are $$\exp\left\{-\left(h/\theta\right)^2\right\}=\rho^{h^2}=\rho_*^{Ch^2}=\exp\left\{-10^\tau h^2\right\}\tag{2.2.9}$$ where $C> 0$ is a given constant (often $C=4$ in examples) with (valid) values of the parameters being $\theta> 0$, $p\in\left(0,1\right)$, $p_*\in\left(0,1\right)$, and $\tau\in\left(-\infty,+\infty\right)$. In words, $\theta$ is the scale parameter version of (2.2.7), $\rho$ is the correlation between two inputs for which $\left|h\right|=1$, and $\rho_*$ is the the correlation between two inputs for which $\left|h\right|=1/\sqrt C$ (e.g., when $C=4$ and $d=1$, $\rho_*=\mathrm{Cor}\left[Y\left(0\right),Y\left(1/2\right)\right]$). Using simple algebra, the parameter defining any of these correlations can be expressed in terms of any of the other four parameters.
 
@@ -69,7 +65,7 @@ So-called simple algebra: let $\rho=\exp\left\{-1/\theta^2\right\}$, which means
 
 ### 3.2.2 Best MSPE Predictors
 
-> Let $\widehat Y_0=\mathrm E\left[Y_0\mid\boldsymbol Y_\mathrm{tr}\right]$ and $Y_0^*=Y_0^*\left(\boldsymbol Y_\mathrm{tr}\right)$, then $$\begin{aligned}&\;\;\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\left(\widehat Y_0-Y_0\right)\right]\\&=\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\mathrm E\left[\left(\widehat Y_0-Y_0\right)\mid\boldsymbol Y_\mathrm{tr}\right]\right]\\&=\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\left(\widehat Y_0-\mathrm E\left[Y_0\mid\boldsymbol Y_\mathrm{tr}\right]\right)\right]\\&=\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\times0\right]=0.\end{aligned}$$
+> Let $\widehat Y_0=\mathrm E\left[Y_0\mid\boldsymbol Y_\mathrm{tr}\right]$ and $Y_0^*=Y_0^*\left(\boldsymbol Y_\mathrm{tr}\right)$, then $$\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\left(\widehat Y_0-Y_0\right)\right]=\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\mathrm E\left[\left(\widehat Y_0-Y_0\right)\mid\boldsymbol Y_\mathrm{tr}\right]\right]=\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\left(\widehat Y_0-\mathrm E\left[Y_0\mid\boldsymbol Y_\mathrm{tr}\right]\right)\right]=\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\times0\right]=0.$$
 
 **Why does the second line hold?**
 
@@ -88,11 +84,7 @@ $$
 Hence, we have
 
 $$
-\begin{aligned}
-&\;\;\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\left(\widehat Y_0-Y_0\right)\right]\\
-&=\mathrm E\left[\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\left(\widehat Y_0-Y_0\right)\mid\boldsymbol Y_\mathrm{tr}\right]\right]\\
-&=\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\mathrm E\left[\left(\widehat Y_0-Y_0\right)\mid\boldsymbol Y_\mathrm{tr}\right]\right].
-\end{aligned}
+\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\left(\widehat Y_0-Y_0\right)\right]=\mathrm E\left[\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\left(\widehat Y_0-Y_0\right)\mid\boldsymbol Y_\mathrm{tr}\right]\right]=\mathrm E\left[\left(Y_0^*-\widehat Y_0\right)\mathrm E\left[\left(\widehat Y_0-Y_0\right)\mid\boldsymbol Y_\mathrm{tr}\right]\right].
 $$
 
 ## 3.3 Empirical Best Linear Unbiased Prediction of Univariate Simulator Output
