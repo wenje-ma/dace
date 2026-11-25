@@ -44,14 +44,14 @@ Besides, $R\left(h\mid\xi\right)$ which have both positive and negative correlat
 A convex combination means that a combination $R_{\mathrm{mix}}$ which seems like
 
 $$
-R_{\mathrm{mix}}=\alpha{R}_1\left(h\right)+\left(1-\alpha\right)R_2\left(h\right),\text{~where~}\alpha\in\left[0,1\right].
+R_{\mathrm{mix}}=\alpha{}R_1\left(h\right)+\left(1-\alpha\right)R_2\left(h\right),\text{~where~}\alpha\in\left[0,1\right].
 $$
 
-In the case above, $\alpha{R}_1\left(\boldsymbol0\right)+\left(1-\alpha\right)R_2\left(\boldsymbol0\right)=1$, which is still a valid correlation function.
+In the case above, $\alpha{}R_1\left(\boldsymbol0\right)+\left(1-\alpha\right)R_2\left(\boldsymbol0\right)=1$, which is still a valid correlation function.
 
-> Calculation gives $$R\left(h\mid\xi\right)=\int_{-\infty}^{+\infty}\cos\left(hw\right)\frac1{\sqrt{2\pi}\sqrt{2\xi}}\exp\left\{-w^2/\left(4\xi\right)\right\}\mathrm{d}w=\exp{-\xi{h}^2},h\in\mathbb{R},\tag{2.2.7}$$ which has rate parameter $\xi$.
+> Calculation gives $$R\left(h\mid\xi\right)=\int_{-\infty}^{+\infty}\cos\left(hw\right)\frac1{\sqrt{2\pi}\sqrt{2\xi}}\exp\left\{-w^2/\left(4\xi\right)\right\}\mathrm{d}w=\exp{-\xi{}h^2},h\in\mathbb{R},\tag{2.2.7}$$ which has rate parameter $\xi$.
 
-> These are $$\exp\left\{-\left(h/\theta\right)^2\right\}=\rho^{h^2}=\rho_*^{Ch^2}=\exp\left\{-10^\tau{h}^2\right\}\tag{2.2.9}$$ where $C>0$ is a given constant (often $C=4$ in examples) with (valid) values of the parameters being $\theta>0$, $p\in\left(0,1\right)$, $p_*\in\left(0,1\right)$, and $\tau\in\left(-\infty,+\infty\right)$. In words, $\theta$ is the scale parameter version of (2.2.7), $\rho$ is the correlation between two inputs for which $\left|h\right|=1$, and $\rho_*$ is the the correlation between two inputs for which $\left|h\right|=1/\sqrt{C}$ (e.g., when $C=4$ and $d=1$, $\rho_*=\mathrm{Cor}\left[Y\left(0\right),Y\left(1/2\right)\right]$). Using simple algebra, the parameter defining any of these correlations can be expressed in terms of any of the other four parameters.
+> These are $$\exp\left\{-\left(h/\theta\right)^2\right\}=\rho^{h^2}=\rho_*^{Ch^2}=\exp\left\{-10^\tau{}h^2\right\}\tag{2.2.9}$$ where $C>0$ is a given constant (often $C=4$ in examples) with (valid) values of the parameters being $\theta>0$, $p\in\left(0,1\right)$, $p_*\in\left(0,1\right)$, and $\tau\in\left(-\infty,+\infty\right)$. In words, $\theta$ is the scale parameter version of (2.2.7), $\rho$ is the correlation between two inputs for which $\left|h\right|=1$, and $\rho_*$ is the the correlation between two inputs for which $\left|h\right|=1/\sqrt{C}$ (e.g., when $C=4$ and $d=1$, $\rho_*=\mathrm{Cor}\left[Y\left(0\right),Y\left(1/2\right)\right]$). Using simple algebra, the parameter defining any of these correlations can be expressed in terms of any of the other four parameters.
 
 **What do the "rate" and "scale" mean?**
 
@@ -103,7 +103,7 @@ The essence of MLE, REML is to maximize the log-likelihood of the multivariate n
 > 
 > ...
 > 
-> Assuming that $\boldsymbol{F}^\mathrm{tr}$ is of full column rank $p$, this method first chooses an $\left(n_s−p\right)\times{n}_s$ matrix $\boldsymbol{C}$ of full row rank, $n_s−p$, that satisfies $C\boldsymbol{F}^\mathrm{tr}=0$. The REML estimator of $\boldsymbol\kappa$ is the maximizer of the likelihood of the linearly transformed "data": $$\boldsymbol{W}\equiv\boldsymbol{C}\boldsymbol{Y}^\mathrm{tr}\sim\mathcal{N}\left(\boldsymbol{C}\boldsymbol{F}_\mathrm{tr}\boldsymbol\beta=\boldsymbol0,\sigma_Z^2\boldsymbol{C}\boldsymbol{R}_\mathrm{tr}\left(\boldsymbol\kappa\right)\boldsymbol{C}^{\top}\right).$$ Notice $\boldsymbol{W}$ has the disadvantage that it contains $p$ fewer "observations" than $\boldsymbol{Y}^\mathrm{tr}$, but it has the advantage that the distribution of $\boldsymbol{W}$ does not depend on the unknown $\boldsymbol\beta$.
+> Assuming that $\boldsymbol{F}^\mathrm{tr}$ is of full column rank $p$, this method first chooses an $\left(n_s−p\right)\times{}n_s$ matrix $\boldsymbol{C}$ of full row rank, $n_s−p$, that satisfies $C\boldsymbol{F}^\mathrm{tr}=0$. The REML estimator of $\boldsymbol\kappa$ is the maximizer of the likelihood of the linearly transformed "data": $$\boldsymbol{W}\equiv\boldsymbol{C}\boldsymbol{Y}^\mathrm{tr}\sim\mathcal{N}\left(\boldsymbol{C}\boldsymbol{F}_\mathrm{tr}\boldsymbol\beta=\boldsymbol0,\sigma_Z^2\boldsymbol{C}\boldsymbol{R}_\mathrm{tr}\left(\boldsymbol\kappa\right)\boldsymbol{C}^{\top}\right).$$ Notice $\boldsymbol{W}$ has the disadvantage that it contains $p$ fewer "observations" than $\boldsymbol{Y}^\mathrm{tr}$, but it has the advantage that the distribution of $\boldsymbol{W}$ does not depend on the unknown $\boldsymbol\beta$.
 
 **Why is it called "less biased"?**
 
